@@ -1,0 +1,25 @@
+{
+  "name": "robot-arm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://kcirtaptrick@github.com/kcirtaptrick/robot-arm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcirtaptrick/robot-arm/issues"
+  },
+  "homepage": "https://github.com/kcirtaptrick/robot-arm#readme",
+  "dependencies": {
+    "i2c-bus": "^4.0.9",
+    "lcdi2c": "^1.0.6",
+    "pca9685": "^4.0.3",
+    "pigpio": "^1.2.2"
+  }
+}

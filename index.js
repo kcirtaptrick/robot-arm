@@ -8,17 +8,17 @@ var pca = new Pca({
     address: 0x40,
     frequency: 50,
     debug: false
-}, (err) {
-  err && throw err;
-  console.log("PCA9685 Initialized")
-}
-
+}, (err) => {
+  console.log(err ? `Error initializing PCA9685: ${err}` : "PCA9685 Initialized")
+})
+/*
 var pca-ac = new Pca({
     i2c: i2cBus.openSync(1),
     address: 0x70,
     frequency: 50,
     debug: false
-}, (err) {
+}, (err) => {
   err && throw err;
   console.log("PCA9685 All-Call Initialized")
 }
+*/
