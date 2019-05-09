@@ -2,7 +2,17 @@ const i2cBus = require("i2c-bus");
 const Pca = require("pca9685").Pca9685Driver;
 const Lcd = require("lcdi2c");
 const io = require("pigpio");
-
+var arm = {
+  basePan: {
+    pin: 0,
+    position: 0
+  },
+  baseTilt: {
+    pin: 1,
+    position: 0
+  }
+  
+}
 var pca = new Pca({
   i2c: i2cBus.openSync(3),
   address: 0x40,
