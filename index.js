@@ -4,13 +4,23 @@ const Lcd = require("lcdi2c");
 const io = require("pigpio");
 
 var pca = new Pca({
-    i2c: i2cBus.openSync(3),
-    address: 0x40,
-    frequency: 50,
-    debug: false
+  i2c: i2cBus.openSync(3),
+  address: 0x40,
+  frequency: 50,
+  debug: false
 }, (err) => {
-  console.log(err ? `Error initializing PCA9685: ${err}` : "PCA9685 Initialized")
-})
+  console.log(err ? `Error initializing PCA9685: ${err}` : "PCA9685 Initialized");
+  function setAll(pwm) {
+    for(let i = 0; i < 8; i++) {
+      pca.setPulseLength(i, pwm)
+    }
+  }
+  flag = false;
+  setInterval(() => {
+    setAll(flag ? 1000 : 2000);
+    flag = !flag;
+  }, 500)
+});
 /*
 var pca-ac = new Pca({
     i2c: i2cBus.openSync(1),
